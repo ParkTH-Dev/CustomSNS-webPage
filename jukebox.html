@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <script
+      src="https://kit.fontawesome.com/0283eb41ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./jukebox.css" />
+    <script defer src="./jukebox.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper_header">
+        <div class="contents_title">
+          <i class="fa-solid fa-music"></i>
+          <div class="title">Music Player</div>
+          <div class="subtitle">Featured Albums</div>
+        </div>
+
+        <div class="album_carousel">
+          <div class="album_card">
+            <div class="album_image">
+              <img src="./contents/jukebox01.jpg" alt="love wins all" />
+              <div class="album_overlay">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="album_info">
+              <h3>love wins all</h3>
+              <p>아이유</p>
+            </div>
+          </div>
+
+          <div class="album_card">
+            <div class="album_image">
+              <img src="./contents/jukebox02.jpg" alt="Attention" />
+              <div class="album_overlay">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="album_info">
+              <h3>Attention</h3>
+              <p>뉴진스</p>
+            </div>
+          </div>
+
+          <div class="album_card">
+            <div class="album_image">
+              <img src="./contents/jukebox03.jpg" alt="savage" />
+              <div class="album_overlay">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+            <div class="album_info">
+              <h3>savage</h3>
+              <p>에스파</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrapper_body">
+        <div class="playlist_header">
+          <div class="playlist_title">
+            <i class="fa-solid fa-list"></i>
+            <h2>Playlist</h2>
+          </div>
+          <div class="playlist_controls">
+            <button class="control_btn">
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+            <button class="control_btn">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="playlist_table">
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox" id="selectAll" /></th>
+                <th>#</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Controls</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="albumTable_song">
+                <td><input type="checkbox" /></td>
+                <td>1</td>
+                <td>love wins all</td>
+                <td>아이유</td>
+                <td>
+                  <audio src="./contents/music/Y.mp3"></audio>
+                  <div class="song_controls">
+                    <button class="control_btn play_btn">
+                      <i class="fa-solid fa-play"></i>
+                      <i class="fa-solid fa-pause" style="display: none"></i>
+                    </button>
+                    <button class="control_btn">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="control_btn">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="albumTable_song">
+                <td><input type="checkbox" /></td>
+                <td>2</td>
+                <td>Attention</td>
+                <td>뉴진스</td>
+                <td>
+                  <audio src="./contents/music/Y.mp3"></audio>
+                  <div class="song_controls">
+                    <button class="control_btn play_btn">
+                      <i class="fa-solid fa-play"></i>
+                      <i class="fa-solid fa-pause" style="display: none"></i>
+                    </button>
+                    <button class="control_btn">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="control_btn">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+              <tr class="albumTable_song">
+                <td><input type="checkbox" /></td>
+                <td>3</td>
+                <td>savage</td>
+                <td>에스파</td>
+                <td>
+                  <audio src="./contents/music/Y.mp3"></audio>
+                  <div class="song_controls">
+                    <button class="control_btn play_btn">
+                      <i class="fa-solid fa-play"></i>
+                      <i class="fa-solid fa-pause" style="display: none"></i>
+                    </button>
+                    <button class="control_btn">
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                    <button class="control_btn">
+                      <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

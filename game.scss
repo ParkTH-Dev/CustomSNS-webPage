@@ -1,0 +1,193 @@
+@import "./reset.css";
+
+// Variables
+$color: (
+  primary: #2b6cb0,
+  secondary: #4a5568,
+  accent: #38b2ac,
+  light: #edf2f7,
+  white: #ffffff,
+  gray: #a0aec0,
+);
+
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$radius: 12px;
+$spacing: 20px;
+
+// Mixins
+@mixin card {
+  background: map-get($color, white);
+  border-radius: $radius;
+  padding: $spacing;
+  box-shadow: $shadow;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Styles
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: $spacing;
+
+  .wrapper_header {
+    margin-bottom: $spacing;
+
+    .contents_title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      i {
+        color: map-get($color, accent);
+        font-size: 1.5rem;
+      }
+
+      .title {
+        color: map-get($color, primary);
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        color: map-get($color, gray);
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .games_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing;
+
+    .game_card {
+      @include card;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .game_header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: $spacing;
+
+        .game_icon {
+          width: 40px;
+          height: 40px;
+          background: map-get($color, light);
+          border-radius: 12px;
+
+          i {
+            // color: map-get($color, accent);
+            color: #000;
+            font-size: 1.2rem;
+          }
+        }
+
+        h3 {
+          color: map-get($color, primary);
+          font-weight: 600;
+          font-size: 1.1rem;
+        }
+      }
+
+      .game_content {
+        .game_subtitle {
+          color: map-get($color, secondary);
+          margin-bottom: 15px;
+
+          .highlight {
+            color: map-get($color, accent);
+            font-weight: 500;
+          }
+        }
+
+        .word_input {
+          form {
+            display: flex;
+            gap: 10px;
+
+            input {
+              flex: 1;
+              padding: 8px 12px;
+              border: 2px solid map-get($color, light);
+              border-radius: $radius;
+              transition: all 0.3s ease;
+
+              &:focus {
+                outline: none;
+                border-color: map-get($color, accent);
+              }
+            }
+
+            .submit_btn {
+              @include flex-center;
+              width: 40px;
+              height: 40px;
+              border: none;
+              background: map-get($color, accent);
+              color: map-get($color, white);
+              border-radius: $radius;
+              cursor: pointer;
+              transition: all 0.3s ease;
+
+              i {
+                font-size: 1.2rem;
+                color: #fff;
+              }
+
+              &:hover {
+                transform: translateY(-2px);
+                background: darken(map-get($color, accent), 10%);
+              }
+            }
+          }
+        }
+
+        .word_result {
+          margin-top: 15px;
+          text-align: center;
+          color: map-get($color, accent);
+          font-weight: 500;
+        }
+
+        .game_lotto_num {
+          background: map-get($color, light);
+          padding: 15px;
+          border-radius: $radius;
+          text-align: center;
+          font-size: 1.2rem;
+          color: map-get($color, primary);
+          margin-bottom: 15px;
+        }
+
+        .lotto_btn {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          background: map-get($color, accent);
+          color: map-get($color, white);
+          border-radius: $radius;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          i {
+            margin-right: 8px;
+          }
+
+          &:hover {
+            background: darken(map-get($color, accent), 10%);
+          }
+        }
+      }
+    }
+  }
+}

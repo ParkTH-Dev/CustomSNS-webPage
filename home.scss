@@ -1,0 +1,137 @@
+@import "./reset.css";
+
+// Variables
+$color: (
+  primary: #2b6cb0,
+  secondary: #4a5568,
+  accent: #38b2ac,
+  light: #edf2f7,
+  white: #ffffff,
+  gray: #a0aec0,
+);
+
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$radius: 12px;
+$spacing: 20px;
+
+// Mixins
+@mixin card {
+  background: map-get($color, white);
+  border-radius: $radius;
+  padding: $spacing;
+  box-shadow: $shadow;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// Styles
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: $spacing;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing;
+
+  .wrapper_header {
+    .status_card {
+      @include card;
+
+      .status_header {
+        @include flex-between;
+        margin-bottom: $spacing;
+
+        .status_title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          i {
+            color: map-get($color, accent);
+            font-size: 1.2rem;
+          }
+
+          h3 {
+            color: map-get($color, primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+        }
+
+        .status_date {
+          color: map-get($color, gray);
+          font-size: 0.9rem;
+        }
+      }
+
+      .status_content {
+        .mood_tracker {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          padding: 15px;
+          background: map-get($color, light);
+          border-radius: $radius;
+
+          .mood_icon {
+            font-size: 2rem;
+          }
+
+          .mood_info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .mood_label {
+              color: map-get($color, gray);
+              font-size: 0.9rem;
+            }
+
+            .mood_status {
+              color: map-get($color, primary);
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper_body {
+    .gallery_section {
+      @include card;
+      .gallery_header {
+        @include flex-between;
+        margin-bottom: $spacing;
+
+        .gallery_title {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          i {
+            color: map-get($color, accent);
+            font-size: 1.2rem;
+          }
+
+          h3 {
+            color: map-get($color, primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+          }
+        }
+      }
+      .gallery_grid {
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: $radius;
+        }
+      }
+    }
+  }
+}

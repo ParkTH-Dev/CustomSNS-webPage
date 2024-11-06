@@ -1,0 +1,219 @@
+@import "./reset.css";
+
+$color: (
+  primary: #2b6cb0,
+  secondary: #4a5568,
+  accent: #38b2ac,
+  light: #edf2f7,
+  white: #ffffff,
+  gray: #a0aec0,
+);
+
+$shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+$radius: 12px;
+$spacing: 20px;
+
+@mixin card {
+  background: map-get($color, white);
+  border-radius: $radius;
+  padding: $spacing;
+  box-shadow: $shadow;
+}
+
+.wrapper {
+  padding: $spacing;
+
+  .wrapper_header {
+    margin-bottom: $spacing * 2;
+
+    .contents_title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: $spacing;
+
+      i {
+        color: map-get($color, accent);
+        font-size: 1.5rem;
+      }
+
+      .title {
+        color: map-get($color, primary);
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .subtitle {
+        color: map-get($color, gray);
+        font-size: 0.9rem;
+      }
+    }
+
+    .album_carousel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: $spacing;
+
+      .album_card {
+        @include card;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: translateY(-5px);
+
+          .album_overlay {
+            opacity: 1;
+          }
+        }
+
+        .album_image {
+          position: relative;
+          border-radius: $radius;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+          }
+
+          .album_overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+
+            i {
+              color: map-get($color, white);
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .album_info {
+          padding: $spacing;
+          text-align: center;
+
+          h3 {
+            color: map-get($color, primary);
+            font-weight: 500;
+            margin-bottom: 5px;
+          }
+
+          p {
+            color: map-get($color, gray);
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  .wrapper_body {
+    @include card;
+
+    .playlist_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: $spacing;
+
+      .playlist_title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        i {
+          color: map-get($color, accent);
+        }
+
+        h2 {
+          color: map-get($color, primary);
+          font-weight: 600;
+        }
+      }
+
+      .playlist_controls {
+        display: flex;
+        gap: 10px;
+
+        .control_btn {
+          background: map-get($color, light);
+          border: none;
+          padding: 8px;
+          border-radius: $radius;
+          color: map-get($color, secondary);
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: map-get($color, accent);
+            color: map-get($color, white);
+          }
+        }
+      }
+    }
+
+    .playlist_table {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th,
+        td {
+          padding: 12px;
+          text-align: left;
+          border-bottom: 1px solid map-get($color, light);
+        }
+
+        th {
+          color: map-get($color, secondary);
+          font-weight: 500;
+        }
+
+        td {
+          color: map-get($color, primary);
+        }
+      }
+    }
+  }
+}
+
+.song_controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .control_btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: map-get($color, light);
+    color: map-get($color, secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: map-get($color, accent);
+      color: map-get($color, white);
+      transform: translateY(-2px);
+    }
+
+    &.play_btn {
+      background: map-get($color, accent);
+      color: map-get($color, white);
+
+      &:hover {
+        background: darken(map-get($color, accent), 10%);
+      }
+    }
+  }
+}

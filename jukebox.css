@@ -1,0 +1,171 @@
+@import "./reset.css";
+.wrapper {
+  padding: 20px;
+}
+.wrapper .wrapper_header {
+  margin-bottom: 40px;
+}
+.wrapper .wrapper_header .contents_title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.wrapper .wrapper_header .contents_title i {
+  color: #38b2ac;
+  font-size: 1.5rem;
+}
+.wrapper .wrapper_header .contents_title .title {
+  color: #2b6cb0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.wrapper .wrapper_header .contents_title .subtitle {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+.wrapper .wrapper_header .album_carousel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.wrapper .wrapper_header .album_carousel .album_card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.wrapper .wrapper_header .album_carousel .album_card:hover {
+  transform: translateY(-5px);
+}
+.wrapper .wrapper_header .album_carousel .album_card:hover .album_overlay {
+  opacity: 1;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_image img {
+  width: 100%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_image .album_overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_image .album_overlay i {
+  color: #ffffff;
+  font-size: 2rem;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_info {
+  padding: 20px;
+  text-align: center;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_info h3 {
+  color: #2b6cb0;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.wrapper .wrapper_header .album_carousel .album_card .album_info p {
+  color: #a0aec0;
+  font-size: 0.9rem;
+}
+.wrapper .wrapper_body {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.wrapper .wrapper_body .playlist_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.wrapper .wrapper_body .playlist_header .playlist_title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.wrapper .wrapper_body .playlist_header .playlist_title i {
+  color: #38b2ac;
+}
+.wrapper .wrapper_body .playlist_header .playlist_title h2 {
+  color: #2b6cb0;
+  font-weight: 600;
+}
+.wrapper .wrapper_body .playlist_header .playlist_controls {
+  display: flex;
+  gap: 10px;
+}
+.wrapper .wrapper_body .playlist_header .playlist_controls .control_btn {
+  background: #edf2f7;
+  border: none;
+  padding: 8px;
+  border-radius: 12px;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.wrapper .wrapper_body .playlist_header .playlist_controls .control_btn:hover {
+  background: #38b2ac;
+  color: #ffffff;
+}
+.wrapper .wrapper_body .playlist_table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.wrapper .wrapper_body .playlist_table table th,
+.wrapper .wrapper_body .playlist_table table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #edf2f7;
+}
+.wrapper .wrapper_body .playlist_table table th {
+  color: #4a5568;
+  font-weight: 500;
+}
+.wrapper .wrapper_body .playlist_table table td {
+  color: #2b6cb0;
+}
+
+.song_controls {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.song_controls .control_btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #edf2f7;
+  color: #4a5568;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.song_controls .control_btn:hover {
+  background: #38b2ac;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+.song_controls .control_btn.play_btn {
+  background: #38b2ac;
+  color: #ffffff;
+}
+.song_controls .control_btn.play_btn:hover {
+  background: #2c8b87;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/0283eb41ff.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- costom -->
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+    <title>싸이월드</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="outerbox">
+        <main class="wrapper">
+          <section class="wrapper_left">
+            <div class="profile_card">
+              <div class="profile_header">
+                <div class="profile_image">
+                  <img src="./contents/iu.jpg" alt="Profile Image" />
+                </div>
+                <div class="profile_stats">
+                  <div class="stat">
+                    <span class="stat_number">1.2K</span>
+                    <span class="stat_label">팔로워</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat_number">850</span>
+                    <span class="stat_label">팔로잉</span>
+                  </div>
+                  <div class="stat">
+                    <span class="stat_number">235</span>
+                    <span class="stat_label">포스트</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="profile_info">
+                <h2 class="profile_name">김철수</h2>
+                <p class="profile_bio">프론트엔드 개발자 | UI/UX 디자이너</p>
+                <div class="profile_tags">
+                  <span class="tag">#개발자</span>
+                  <span class="tag">#디자인</span>
+                  <span class="tag">#여행</span>
+                </div>
+              </div>
+
+              <div class="profile_contact">
+                <div class="contact_item">
+                  <i class="fa-solid fa-envelope"></i>
+                  <span>contact@email.com</span>
+                </div>
+                <div class="contact_item">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>서울, 대한민국</span>
+                </div>
+              </div>
+
+              <div class="profile_social">
+                <a href="#" class="social_btn github">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="#" class="social_btn linkedin">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="#" class="social_btn twitter">
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="#" class="social_btn instagram">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </section>
+          <section class="wrapper_right">
+            <div class="content_header">
+              <div class="header_top">
+                <h2 class="title">My Dashboard</h2>
+                <div class="header_actions">
+                  <button class="action_btn">
+                    <i class="fa-solid fa-bell"></i>
+                  </button>
+                  <button class="action_btn">
+                    <i class="fa-solid fa-gear"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="header_bottom">
+                <div class="tab_menu">
+                  <button id="menuHome" class="tab_btn active">홈</button>
+                  <button id="menuGame" class="tab_btn">게임</button>
+                  <button id="menuJukebox" class="tab_btn">쥬크박스</button>
+                </div>
+              </div>
+            </div>
+            <div class="content_body">
+              <div class="content_container">
+                <iframe id="contentframe" src="./home.html"></iframe>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

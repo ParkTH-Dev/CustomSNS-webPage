@@ -1,0 +1,305 @@
+// reset
+@import "./reset.css";
+
+// built-in-function
+$color: (
+  primary: #2d3436,
+  secondary: #636e72,
+  accent: #00b894,
+  light: #dfe6e9,
+  white: #ffffff,
+  gradient-1: #a8c0ff,
+  gradient-2: #3f2b96,
+);
+$size: 14px;
+
+// common
+.background {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    map-get($color, gradient-1),
+    map-get($color, gradient-2)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  .outerbox {
+    width: 90%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    .wrapper {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 30px;
+      padding: 30px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}
+
+// wrapper_left
+.wrapper_left {
+  background: map-get($color, white);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+
+  .profile_card {
+    .profile_header {
+      text-align: center;
+      margin-bottom: 25px;
+
+      .profile_image {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 3px solid map-get($color, accent);
+        padding: 3px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+
+      .profile_stats {
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 0;
+        border-top: 1px solid map-get($color, light);
+        border-bottom: 1px solid map-get($color, light);
+
+        .stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+
+          .stat_number {
+            font-weight: 600;
+            color: map-get($color, primary);
+            font-size: 1.2rem;
+          }
+
+          .stat_label {
+            font-size: 0.9rem;
+            color: map-get($color, secondary);
+          }
+        }
+      }
+    }
+
+    .profile_info {
+      text-align: center;
+      margin-bottom: 25px;
+
+      .profile_name {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: map-get($color, primary);
+        margin-bottom: 8px;
+      }
+
+      .profile_bio {
+        color: map-get($color, secondary);
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+      }
+
+      .profile_tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+
+        .tag {
+          background: rgba(map-get($color, accent), 0.1);
+          color: map-get($color, accent);
+          padding: 4px 12px;
+          border-radius: 15px;
+          font-size: 0.85rem;
+        }
+      }
+    }
+
+    .profile_contact {
+      margin-bottom: 25px;
+
+      .contact_item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0;
+        color: map-get($color, secondary);
+
+        i {
+          color: map-get($color, accent);
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .profile_social {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .social_btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: map-get($color, light);
+        color: map-get($color, secondary);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px);
+          background: map-get($color, accent);
+          color: map-get($color, white);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// wrapper_right
+.wrapper_right {
+  background: map-get($color, white);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+
+  .content_header {
+    margin-bottom: 20px;
+
+    .header_top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+
+      .title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: map-get($color, primary);
+      }
+
+      .header_actions {
+        display: flex;
+        gap: 10px;
+
+        .action_btn {
+          width: 40px;
+          height: 40px;
+          border-radius: 12px;
+          border: none;
+          background: map-get($color, light);
+          color: map-get($color, secondary);
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: map-get($color, accent);
+            color: map-get($color, white);
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+
+    .header_bottom {
+      .tab_menu {
+        display: flex;
+        gap: 15px;
+
+        .tab_btn {
+          padding: 8px 16px;
+          border: none;
+          background: none;
+          color: map-get($color, secondary);
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          border-radius: 8px;
+
+          &.active {
+            background: map-get($color, accent);
+            color: map-get($color, white);
+          }
+
+          &:hover:not(.active) {
+            background: rgba(map-get($color, accent), 0.1);
+            color: map-get($color, accent);
+          }
+        }
+      }
+    }
+  }
+
+  .content_body {
+    background: map-get($color, light);
+    border-radius: 15px;
+    overflow: hidden;
+    height: calc(100% - 120px);
+
+    .content_container {
+      height: 100%;
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 700px;
+  }
+}
+
+// navigation
+.navigation {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: map-get($color, white);
+  border-radius: 25px;
+  padding: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+
+  .navigation_item {
+    padding: 10px 20px;
+    color: map-get($color, secondary);
+    transition: all 0.3s;
+
+    &:hover,
+    &.active {
+      color: map-get($color, accent);
+      background: rgba(0, 184, 148, 0.1);
+      border-radius: 20px;
+    }
+  }
+}
